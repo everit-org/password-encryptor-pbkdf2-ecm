@@ -37,7 +37,7 @@
   <description>ECM based component of PBKDF2 based implementation</description>
 
   <properties>
-    <projectpath>password-encryptor-pbkdf2</projectpath>
+    <projectpath>password-encryptor-pbkdf2-ecm</projectpath>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>

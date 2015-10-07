@@ -19,7 +19,6 @@ import java.util.UUID;
 
 import org.everit.credential.encryptor.CredentialEncryptor;
 import org.everit.credential.encryptor.CredentialMatcher;
-import org.everit.osgi.dev.testrunner.TestDuringDevelopment;
 import org.everit.osgi.dev.testrunner.TestRunnerConstants;
 import org.everit.osgi.ecm.annotation.Component;
 import org.everit.osgi.ecm.annotation.ConfigurationPolicy;
@@ -74,7 +73,6 @@ public class PBKDF2PasswordEncryptorTestComponent {
   }
 
   @Test
-  @TestDuringDevelopment
   public void testArgumentValidations() {
     try {
       credentialEncryptor.encrypt(null);

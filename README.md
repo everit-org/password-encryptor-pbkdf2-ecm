@@ -1,7 +1,7 @@
 password-encryptor-pbkdf2-ecm
 ============================
 
-ECM based components for [cache-password-encryptor-pbkdf2][3]
+ECM based components for [password-encryptor-pbkdf2][3]
 
 #Component
 The module contains one Declarative Services component. The component can be 
@@ -35,4 +35,4 @@ The default and recommended setting for encryption is PBKDF2WithHmacSHA256 with
 
 [1]: https://github.com/everit-org/credential-encryptor-api
 [2]: http://www.javacodegeeks.com/2012/05/secure-password-storage-donts-dos-and.html
-[3]: https://github.com/everit-org/cache-password-encryptor-pbkdf2
+[3]: https://github.com/everit-org/password-encryptor-pbkdf2
