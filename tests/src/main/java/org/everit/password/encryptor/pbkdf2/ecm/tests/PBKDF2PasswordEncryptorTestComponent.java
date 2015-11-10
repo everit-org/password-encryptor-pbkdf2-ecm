@@ -44,8 +44,7 @@ import aQute.bnd.annotation.headers.ProvideCapability;
     @StringAttribute(attributeId = TestRunnerConstants.SERVICE_PROPERTY_TESTRUNNER_ENGINE_TYPE,
         defaultValue = "junit4"),
     @StringAttribute(attributeId = TestRunnerConstants.SERVICE_PROPERTY_TEST_ID,
-        defaultValue = "PBKDF2PasswordEncryptorTest"),
-})
+        defaultValue = "PBKDF2PasswordEncryptorTest") })
 @Service(value = PBKDF2PasswordEncryptorTestComponent.class)
 public class PBKDF2PasswordEncryptorTestComponent {
 
