@@ -32,6 +32,7 @@ public final class PBKDF2PasswordEncryptorConstants {
   public static final String PROP_ALGORITHM = "algorithm";
 
   public static final String PROP_ITERATION_COUNT = "iteration.count";
+
   /**
    * The service factory PID of the PBKDF2 Password Encryptor component.
    */

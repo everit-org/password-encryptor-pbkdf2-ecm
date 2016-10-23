@@ -25,29 +25,27 @@ import org.everit.osgi.ecm.annotation.Component;
 import org.everit.osgi.ecm.annotation.ConfigurationPolicy;
 import org.everit.osgi.ecm.annotation.Deactivate;
 import org.everit.osgi.ecm.annotation.ManualService;
+import org.everit.osgi.ecm.annotation.ManualServices;
 import org.everit.osgi.ecm.annotation.attribute.IntegerAttribute;
 import org.everit.osgi.ecm.annotation.attribute.StringAttribute;
 import org.everit.osgi.ecm.annotation.attribute.StringAttributeOption;
 import org.everit.osgi.ecm.annotation.attribute.StringAttributes;
 import org.everit.osgi.ecm.component.ComponentContext;
-import org.everit.osgi.ecm.extender.ECMExtenderConstants;
+import org.everit.osgi.ecm.extender.ExtendComponent;
 import org.everit.password.encryptor.pbkdf2.Algorithm;
 import org.everit.password.encryptor.pbkdf2.PBKDF2PasswordEncryptorImpl;
 import org.everit.password.encryptor.pbkdf2.ecm.PBKDF2PasswordEncryptorConstants;
 import org.osgi.framework.Constants;
 import org.osgi.framework.ServiceRegistration;
 
-import aQute.bnd.annotation.headers.ProvideCapability;
-
 /**
  * ECM component for {@link CredentialEncryptor} and {@link CredentialMatcher} interface based on
  * {@link PBKDF2PasswordEncryptorImpl}.
  */
+@ExtendComponent
 @Component(componentId = PBKDF2PasswordEncryptorConstants.SERVICE_FACTORYPID_CREDENTIAL_ENCRYPTOR,
     configurationPolicy = ConfigurationPolicy.FACTORY, label = "Everit PBKDF2 Password Encryptor",
     description = "Component for password encryption and verification based on PBKDF2.")
-@ProvideCapability(ns = ECMExtenderConstants.CAPABILITY_NS_COMPONENT,
-    value = ECMExtenderConstants.CAPABILITY_ATTR_CLASS + "=${@class}")
 @StringAttributes({
     @StringAttribute(attributeId = Constants.SERVICE_DESCRIPTION,
         defaultValue = PBKDF2PasswordEncryptorConstants.DEFAULT_SERVICE_DESCRIPTION,
@@ -55,7 +53,7 @@ import aQute.bnd.annotation.headers.ProvideCapability;
         label = "Service Description",
         description = "The description of this component configuration. It is used to easily "
             + "identify the service registered by this component.") })
-@ManualService({ CredentialEncryptor.class, CredentialMatcher.class })
+@ManualServices(@ManualService({ CredentialEncryptor.class, CredentialMatcher.class }))
 public class PBKDF2PasswordEncryptorComponent {
 
   public static final int P1_SERVICE_DESCRIPTION = 1;
